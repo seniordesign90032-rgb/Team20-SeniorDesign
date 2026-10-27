@@ -13,3 +13,9 @@ build/
 
 Podfile.lock
 pubspec.lock
+
+# Local codebase notes
+CODEBASE_BREAKDOWN.md
+
+# Flutter-generated iOS build output
+example/ios/Flutter/ephemeral/
