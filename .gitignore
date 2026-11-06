@@ -19,3 +19,6 @@ CODEBASE_BREAKDOWN.md
 
 # Flutter-generated iOS build output
 example/ios/Flutter/ephemeral/
+
+# Local token-refresh planning notes
+tokenRefresh_plan.md
