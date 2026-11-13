@@ -386,17 +386,17 @@ class _PatientSignInScreenState extends State<PatientSignInScreen> {
       showLoginDialog(context, 'Sign Up Failed', 'Password must be at least 8 characters long.');
       return false;
     }
-    // check for uppercase letters in the password
+    // check for at least one uppercase letter in the password
     if (!_controllerPassword.text.contains(RegExp(r'[A-Z]'))) {
       showLoginDialog(context, 'Sign Up Failed', 'Password must contain at least one uppercase letter.');
       return false;
     }
-    // check for two numbers in the password
+    // check for at least two numeric characters in the password
     if (!_controllerPassword.text.contains(RegExp(r'\d.*\d'))) {
       showLoginDialog(context, 'Sign Up Failed', 'Password must contain at least two numeric characters.');
       return false;
     }
-    // check for special characters in the password
+    // check for at least one special character in the password
     if (!_controllerPassword.text.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
       showLoginDialog(context, 'Sign Up Failed', 'Password must contain at least one special character.');
       return false;
