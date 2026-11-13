@@ -133,20 +133,26 @@ class _PatientDisplayScreenState extends State<PatientDisplayScreen> {
           Icon(Icons.system_security_update)
         ];
         List<String> score = [
-          "Acceleration\t\t",
-          "Braking\t\t\t\t\t\t\t\t\t\t",
-          "Speeding\t\t\t\t\t\t\t",
-          "Cornering\t\t\t\t\t\t",
-          "Phone Usage "
+          'Acceleration',
+          'Braking',
+          'Speeding',
+          'Cornering',
+          'Phone Usage',
         ];
         for (int i = 0; i < items.length; i++) {
           Padding pad = new Padding(
               padding: EdgeInsets.only(top: 10),
               child: new ListTile(
                 leading: icons[i],
-                title: Text(score[i] +
-                    "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
-                    items[i]),
+                title: Text(score[i]),
+                  // Score value on the right.
+                  trailing: Text(
+                    items[i],
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 shape: RoundedRectangleBorder(
                   side: BorderSide(
                       color: Color.fromARGB(255, 63, 60, 60), width: 1),
@@ -187,11 +193,11 @@ class _PatientDisplayScreenState extends State<PatientDisplayScreen> {
       body: ListView(
         children: [
           Column(children: [
-            Padding(padding: EdgeInsets.only(bottom: 50)),
+            const SizedBox(height: 24),
             Row(
               children: totals,
             ),
-            Padding(padding: EdgeInsets.only(bottom: 50))
+            const SizedBox(height: 24),
           ]),
           Text(
             "Summary Scores",
@@ -202,9 +208,9 @@ class _PatientDisplayScreenState extends State<PatientDisplayScreen> {
             child: Column(children: scores),
             margin: EdgeInsets.only(left: 10, right: 10),
           ),
-          Padding(
-            padding: EdgeInsets.only(bottom: 70),
-          ),
+
+          const SizedBox(height: 24),
+
           Padding(
               padding: EdgeInsets.only(bottom: 50, right: 10, left: 10),
               child: TextButton(
@@ -216,9 +222,7 @@ class _PatientDisplayScreenState extends State<PatientDisplayScreen> {
                       builder: (context) =>
                           PatientTripsScreen(email, patientId, tripCount)));
                 },
-                child: Text(
-                  "View More Drive Analytics",
-                ),
+                child: const Text('View Trips'),
               )),
         ],
       ),

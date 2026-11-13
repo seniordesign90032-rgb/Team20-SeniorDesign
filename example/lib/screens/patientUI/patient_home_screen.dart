@@ -111,7 +111,7 @@ class _PatientHomeScreenState extends State<PatientHomeScreen>
               ),
               child: Image.asset(
                 'assets/images/road.png',
-                height: 200,
+                height: 140,
               ),
             ),
           ),
